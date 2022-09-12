@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieCredits } from 'services/api';
 import CastList from 'components/CastList/CastList';
+import { CastContainer } from './Cast.styled';
 
 const Cast = () => {
   const { id } = useParams();
@@ -24,13 +25,13 @@ const Cast = () => {
   console.log(credits);
 
   return (
-    <div>
+    <CastContainer>
       {credits.length > 0 ? (
         <CastList actors={credits} />
       ) : (
         'We have no cast for this movie'
       )}
-    </div>
+    </CastContainer>
   );
 };
 

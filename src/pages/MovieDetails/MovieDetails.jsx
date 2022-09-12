@@ -18,8 +18,7 @@ const MovieDetails = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState({});
   const location = useLocation();
-
-  const backLinkHref = location.state?.from ?? '/';
+  const backLinkHref = location.state?.from ?? '/movies';
 
   console.log(location);
 
@@ -53,10 +52,14 @@ const MovieDetails = () => {
           <Overview>{overview}</Overview>
           <LinkList>
             <li>
-              <DetailsLink to="cast">Cast</DetailsLink>
+              <DetailsLink to="cast" state={{ from: location.state.from }}>
+                Cast
+              </DetailsLink>
             </li>
             <li>
-              <DetailsLink to="reviews">Reviews</DetailsLink>
+              <DetailsLink to="reviews" state={{ from: location.state.from }}>
+                Reviews
+              </DetailsLink>
             </li>
           </LinkList>
         </DetailsWrapper>
