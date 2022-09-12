@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { useParams, Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { useParams, Outlet, useLocation } from 'react-router-dom';
 import { getMovieDetails } from 'services/api';
 import { useState, useEffect } from 'react';
 import BackLink from '../../components/BackLink/Backlink.jsx';
@@ -18,7 +18,7 @@ const MovieDetails = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState({});
   const location = useLocation();
-  const navigate = useNavigate();
+
   const backLinkHref = location.state?.from ?? '/';
 
   console.log(location);
@@ -41,12 +41,7 @@ const MovieDetails = () => {
 
   return (
     <div>
-      <BackLink
-        to={backLinkHref}
-        onClick={() => navigate(location?.state?.from)}
-      >
-        Go back
-      </BackLink>
+      <BackLink to={backLinkHref}>Go back</BackLink>
       <MovieWrapper>
         <Poster
           src={poster_path && `https://image.tmdb.org/t/p/w500${poster_path}`}
