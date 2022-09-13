@@ -9,7 +9,7 @@ const CastList = ({ actors }) => {
           <Photo
             src={
               profile_path
-                ? `https:image.tmdb.org/t/p/w200${profile_path}`
+                ? `https://image.tmdb.org/t/p/w200${profile_path}`
                 : `https://via.placeholder.com/260x390?text=No+Photo`
             }
             alt={original_name}
