@@ -22,8 +22,6 @@ const Cast = () => {
     getCredits();
   }, [id]);
 
-  console.log(credits);
-
   return (
     <CastContainer>
       {credits.length > 0 ? (

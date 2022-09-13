@@ -12,7 +12,7 @@ import {
 const Searchbar = ({ handleSubmit }) => {
   const [value, setValue] = useState('');
 
-  const onSearchSubmit = e => {
+  const onSearchSubmit = () => {
     handleSubmit(value);
 
     if (value === '') {

@@ -20,8 +20,6 @@ const MovieDetails = () => {
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/movies';
 
-  console.log(location);
-
   useEffect(() => {
     async function getFilm() {
       try {
@@ -35,7 +33,6 @@ const MovieDetails = () => {
     getFilm();
   }, [id]);
 
-  console.log(movie);
   const { poster_path, title, overview, tagline } = movie;
 
   return (
@@ -64,7 +61,7 @@ const MovieDetails = () => {
           </LinkList>
         </DetailsWrapper>
       </MovieWrapper>
-      <Suspense fallback={<div>Loading subpage...</div>}>
+      <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>
     </div>

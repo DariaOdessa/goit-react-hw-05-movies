@@ -4,7 +4,6 @@ import { Container, CardWrapper, MovieName } from './MoviesList.styled';
 
 const MoviesList = ({ movies }) => {
   const location = useLocation();
-  console.log(location.state);
   return (
     <Container>
       {movies.map(({ poster_path, id, title }) => (

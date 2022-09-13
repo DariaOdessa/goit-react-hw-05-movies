@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { getMovieRewiews } from 'services/api';
 import ReviewsList from 'components/ReviewList/ReviewsList';
 import { ReviewsContainer } from './Reviews.styled';
@@ -7,8 +7,6 @@ import { ReviewsContainer } from './Reviews.styled';
 const Reviews = () => {
   const { id } = useParams();
   const [reviews, setReviews] = useState([]);
-  const location = useLocation();
-  console.log(location);
 
   useEffect(() => {
     async function getReviews() {
